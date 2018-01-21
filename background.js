@@ -17,7 +17,9 @@ function sendTextToAPI(info) {
       method: 'POST',
       body: JSON.stringify({'text': 'testtext'})
   }).then(function(res) {
-    alert(JSON.stringify(res.body))
+    res.text().then(response => {
+      alert(response);
+    });
   }).catch(function(error) {
     alert(error)
   });
