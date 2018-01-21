@@ -18,7 +18,8 @@ function sendTextToAPI(info) {
       body: JSON.stringify({'text': 'testtext'})
   }).then(function(res) {
     res.text().then(response => {
-      alert(response);
+      x = JSON.parse(response)
+      alert(`That was: ${x.prediction}`);
     });
   }).catch(function(error) {
     alert(error)
