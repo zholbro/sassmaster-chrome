@@ -15,7 +15,7 @@ function sendTextToAPI(window) {
           'Content-Type': 'application/json'
       },
       method: 'POST',
-      body: JSON.stringify({'text': window.getselection})
+      body: JSON.stringify({'text': window.getSelection})
   }).then(function(res) {
     res.text().then(response => {
       x = JSON.parse(response)
