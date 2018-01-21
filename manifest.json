@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "sassmaster-chrome",
+  "version", "0.1",
+  "permissions": ["contextMenus"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    { "matches" : [
+        "<all_urls>"
+      ],
+      "js": ["content.js", "axios_min.js"]
+    }
+  ]
+}
+
