@@ -2,9 +2,9 @@
   "manifest_version": 2,
   "name": "sassmaster-chrome",
   "version": "0.1",
-  "permissions": ["contextMenus"],
+  "permissions": ["contextMenus", "http://localhost:4567/*", "<all_urls>"],
   "background": {
-    "scripts": ["background.js", "axios.min.js"]
+    "scripts": ["background.js"]
   },
   "content_scripts": [
     { "matches" : [
