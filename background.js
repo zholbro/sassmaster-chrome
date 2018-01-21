@@ -15,11 +15,13 @@ function sendTextToAPI(info) {
           'Content-Type': 'application/json'
       },
       method: 'POST',
-      body: JSON.stringify({'text': 'testtext'})
+      body: JSON.stringify({'text': info.selectiontext})
   }).then(function(res) {
     res.text().then(response => {
       x = JSON.parse(response)
-      alert(`That was: ${x.prediction}`);
+      //alert(JSON.stringify(x));
+      alert(`That was: ${x.prediction}. Bayes predicts: ${x.bayes.prediction}. ML predicts: ${x.ml.prediction}.`);
+      // Bayes predicts: ${x.bayes.prediction}. ML predicts: ${x.ml.prediction}.
     });
   }).catch(function(error) {
     alert(error)
