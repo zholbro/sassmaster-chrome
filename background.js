@@ -1,4 +1,4 @@
-function sendTextToAPI(info) {
+function sendTextToAPI(window) {
   // axios({
   // 	method: 'post',
   // 	url: 'http://localhost:4567/sarc',
@@ -15,7 +15,7 @@ function sendTextToAPI(info) {
           'Content-Type': 'application/json'
       },
       method: 'POST',
-      body: JSON.stringify({'text': info.selectiontext})
+      body: JSON.stringify({'text': window.getselection})
   }).then(function(res) {
     res.text().then(response => {
       x = JSON.parse(response)
